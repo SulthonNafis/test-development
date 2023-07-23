@@ -1,4 +1,6 @@
-# Panduan Instalasi Laravel
+# Panduan Clone dan Menjalankan Proyek "test-development"
+
+Berikut adalah panduan langkah demi langkah untuk meng-clone dan menjalankan proyek "test-development" dari GitHub:
 
 ## Persyaratan
 
@@ -7,67 +9,73 @@ Sebelum memulai, pastikan sistem Anda telah memenuhi persyaratan berikut:
 1. PHP versi 7.3 atau lebih tinggi
 2. Composer (https://getcomposer.org/)
 3. Extensi PHP yang diperlukan (contoh: OpenSSL, PDO, Mbstring, Tokenizer, dll.)
-4. Database server (MySQL, PostgreSQL, SQLite, SQL Server, atau lainnya)
+4. Git (https://git-scm.com/)
 
-## Langkah 1: Instal Composer
+## Langkah 1: Clone Repository
 
-Pastikan Anda telah menginstal Composer pada sistem Anda. Composer adalah alat manajemen paket PHP yang diperlukan untuk mengelola dependensi aplikasi Laravel. Anda dapat mengunduh dan menginstalnya dari situs resmi Composer (https://getcomposer.org/).
+Pertama, pastikan Anda telah menginstal Git pada komputer Anda. Jika belum, Anda dapat mengunduh dan menginstalnya dari situs resmi Git (https://git-scm.com/).
 
-## Langkah 2: Instal Git
-Pastikan Anda telah menginstal Git pada komputer Anda. Git adalah sistem kontrol versi yang digunakan untuk mengelola proyek secara terdistribusi. Anda dapat mengunduh dan menginstalnya dari situs resmi Git (https://git-scm.com/).
+Setelah Git terinstal, buka terminal atau command prompt, dan tentukan direktori di mana Anda ingin menyimpan proyek "test-development" dari GitHub. Kemudian, jalankan perintah berikut:
 
-## Langkah 3: Clone Repository
-Setelah Git terinstal, buka terminal atau command prompt, dan tentukan direktori di mana Anda ingin menyimpan proyek Laravel dari GitHub. Kemudian, jalankan perintah berikut:
+```
+git clone https://github.com/SulthonNafis/test-development.git
+```
 
-## Langkah 4:
-buka command promt lalu Copy code
-git clone https://github.com/nama-pengguna/nama-repository.git
-Gantilah nama-pengguna dengan nama pengguna akun GitHub Anda dan nama-repository dengan nama repository GitHub yang ingin Anda clone.
+Setelah menjalankan perintah tersebut, Git akan mengunduh semua file dan folder yang terkait dengan proyek "test-development" ke dalam direktori yang Anda tentukan.
 
-Contoh, jika saya ingin meng-clone proyek Laravel bernama "laravel-app" dari repository "https://github.com/johndoe/laravel-app.git", perintahnya akan menjadi:
+## Langkah 2: Konfigurasi Lingkungan
 
-bash
-Copy code
-git clone https://github.com/johndoe/laravel-app.git
-Setelah menjalankan perintah tersebut, Git akan mengunduh semua file dan folder yang terkait dengan proyek Laravel ke dalam direktori yang Anda tentukan.
+Buka terminal atau command prompt, masuk ke direktori proyek "test-development" yang telah di-clone, dan buat salinan file `.env.example` sebagai `.env`:
 
-Langkah 3: Konfigurasi Lingkungan
-Buka terminal atau command prompt, masuk ke direktori proyek Laravel yang telah di-clone, dan buat salinan file .env.example sebagai .env:
-
-bash
-Copy code
+```
 cp .env.example .env      # untuk Mac/Linux
 copy .env.example .env   # untuk Windows
-Kemudian, buka file .env dan atur konfigurasi lingkungan sesuai dengan pengaturan database dan kebutuhan lain yang Anda miliki.
+```
 
-Langkah 4: Install Dependensi
-Dalam direktori proyek Laravel, jalankan perintah berikut untuk menginstal semua dependensi yang diperlukan oleh proyek:
+Kemudian, buka file `.env` dan atur konfigurasi lingkungan sesuai dengan pengaturan database dan kebutuhan lain yang Anda miliki.
 
-Copy code
+## Langkah 3: Install Dependensi
+
+Dalam direktori proyek "test-development", jalankan perintah berikut untuk menginstal semua dependensi yang diperlukan oleh proyek:
+
+```
 composer install
-Perintah di atas akan menggunakan Composer untuk mengunduh dan menginstal semua paket yang diperlukan oleh proyek Laravel.
+```
 
-Langkah 5: Generate Key Aplikasi
-Pada file .env, perhatikan baris APP_KEY. Anda harus mengisi nilai kunci aplikasi ini dengan nilai acak. Untuk melakukan ini, jalankan perintah berikut di terminal:
+Perintah di atas akan menggunakan Composer untuk mengunduh dan menginstal semua paket yang diperlukan oleh proyek "test-development".
 
-vbnet
-Copy code
+## Langkah 4: Generate Key Aplikasi
+
+Pada file `.env`, perhatikan baris `APP_KEY`. Anda harus mengisi nilai kunci aplikasi ini dengan nilai acak. Untuk melakukan ini, jalankan perintah berikut di terminal:
+
+```
 php artisan key:generate
-Perintah di atas akan mengisi nilai acak untuk APP_KEY pada file .env.
+```
 
-Langkah 6: Jalankan Migrasi dan Seeder (Opsional)
-Jika proyek Laravel yang Anda clone memiliki tabel database yang harus diatur, Anda dapat menjalankan migrasi dengan perintah berikut:
+Perintah di atas akan mengisi nilai acak untuk `APP_KEY` pada file `.env`.
 
-Copy code
+## Langkah 5: Jalankan Migrasi dan Seeder (Opsional)
+
+Jika proyek "test-development" memiliki tabel database yang harus diatur, Anda dapat menjalankan migrasi dengan perintah berikut:
+
+```
 php artisan migrate
+```
+
 Jika Anda ingin mengisi database dengan data default, Anda dapat menjalankan seeder:
 
-Copy code
+```
 php artisan db:seed
-Langkah 7: Jalankan Aplikasi Laravel
-Setelah semua langkah sebelumnya selesai, Anda dapat menjalankan aplikasi Laravel Anda. Jalankan perintah berikut di terminal:
+```
 
-Copy code
+## Langkah 6: Jalankan Aplikasi Laravel
+
+Setelah semua langkah sebelumnya selesai, Anda dapat menjalankan aplikasi "test-development". Jalankan perintah berikut di terminal:
+
+```
 php artisan serve
-Aplikasi Laravel akan dijalankan di alamat http://localhost:8000. Anda dapat membuka alamat tersebut di browser Anda dan melihat tampilan awal dari aplikasi Laravel Anda.
+```
 
+Aplikasi akan dijalankan di alamat `http://localhost:8000`. Anda dapat membuka alamat tersebut di browser Anda dan mulai menjelajahi aplikasi "test-development".
+
+Selamat, Anda telah berhasil meng-clone dan menjalankan proyek "test-development" dari GitHub ke komputer Anda! Selamat berkoding!
